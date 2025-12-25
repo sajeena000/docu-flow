@@ -10,7 +10,17 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/content.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
 
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.svg">
+    <meta name="theme-color" content="#0366d6"> 
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="GitFlow Documentation">
     <meta property="og:description" content="Learn Git and master the Feature-Branch workflow with our beginner-friendly guide.">
@@ -79,6 +89,377 @@
                 </div>
             </nav>
         </aside>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="content-area" role="main">
+            <article>
+                <header class="content-header">
+                    <h1>A Beginner's Guide to Git</h1>
+                    <p class="subtitle">Master version control and learn how to collaborate effectively on code projects.</p>
+                </header>
+
+                <section id="what-is-git">
+                    <h2>What is Git?</h2>
+                    <p>Git is a <strong>Distributed Version Control System (DVCS)</strong>. Unlike older centralized systems, every developer's computer has a complete copy of the project history, enabling offline work and faster operations.</p>
+                    <p>It allows you to track changes, revert to previous states, and collaborate with team members without overwriting each other's work.</p>
+                    
+                    <h3>Why Use Git?</h3>
+                    <ul>
+                        <li><strong>History Tracking:</strong> See who made what changes and when, with complete audit trails</li>
+                        <li><strong>Collaboration:</strong> Work with multiple developers simultaneously without conflicts</li>
+                        <li><strong>Experimentation:</strong> Try new features in isolated branches without breaking the main codebase</li>
+                        <li><strong>Backup:</strong> Your code is safely stored, versioned, and recoverable</li>
+                    </ul>
+                </section>
+
+                <section id="installation">
+                    <h2>Installation</h2>
+                    <p>Before you can use Git, you need to install it on your machine. Download the latest version from the official website for your operating system.</p>
+                    
+                    <h3>Download Git</h3>
+                    <ul>
+                        <li><strong>Windows:</strong> Download installer from <a href="https://git-scm.com/download/win" target="_blank" rel="noopener noreferrer">git-scm.com</a></li>
+                        <li><strong>macOS:</strong> Install via Homebrew: <code>brew install git</code> or download from <a href="https://git-scm.com/download/mac" target="_blank" rel="noopener noreferrer">git-scm.com</a></li>
+                        <li><strong>Linux:</strong> Use your package manager: <code>sudo apt-get install git</code> (Debian/Ubuntu) or <code>sudo yum install git</code> (Fedora)</li>
+                    </ul>
+
+                    <h3>Verify Installation</h3>
+                    <div class="code-block">
+                        <span class="code-label">Terminal</span>
+                        <pre><code class="language-bash"># Check if Git is installed
+git --version
+
+# Expected output:
+# git version 2.x.x</code></pre>
+                    </div>
+                </section>
+
+                <section id="configuration">
+                    <h2>First-time Setup</h2>
+                    <p>Set your identity so your commits are correctly attributed to you. This information will be included in every commit you make and will be visible to other collaborators.</p>
+                    
+                    <div class="code-block">
+                        <span class="code-label">Configure Your Identity</span>
+                        <pre><code class="language-bash">git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+                    </div>
+
+                    <h3>Verify Your Configuration</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># View all your settings
+git config --list
+
+# View specific setting
+git config user.name
+git config user.email</code></pre>
+                    </div>
+
+                    <div class="note">
+                        <strong>💡 Tip:</strong> Use the same email address you use for your GitHub account to ensure your commits are properly linked to your profile and contribute to your activity graph.
+                    </div>
+                </section>
+
+                <section id="basic-commands">
+                    <h2>Basic Commands</h2>
+                    <p>The core cycle of Git revolves around these essential commands. Understanding these will cover 90% of your daily Git usage and form the foundation of your version control workflow.</p>
+                    
+                    <dl class="command-list">
+                        <dt><code>git init</code></dt>
+                        <dd>Initialize a new local Git repository in your current directory. This creates a <code>.git</code> folder that tracks all changes.</dd>
+                        
+                        <dt><code>git clone &lt;url&gt;</code></dt>
+                        <dd>Download a remote repository to your local machine, including all history and branches.</dd>
+                        
+                        <dt><code>git status</code></dt>
+                        <dd>Check which files have been modified, added, or deleted. This is your go-to command for checking the state of your repository.</dd>
+                        
+                        <dt><code>git add .</code></dt>
+                        <dd>Add all changed files in the current directory to the staging area, preparing them for commit.</dd>
+                        
+                        <dt><code>git add &lt;file&gt;</code></dt>
+                        <dd>Add a specific file to the staging area. Use this for more granular control over what gets committed.</dd>
+                        
+                        <dt><code>git commit -m "message"</code></dt>
+                        <dd>Save a snapshot of your staged changes with a descriptive message. Write clear, meaningful commit messages!</dd>
+                        
+                        <dt><code>git push</code></dt>
+                        <dd>Upload your local commits to a remote server (like GitHub), making them available to other team members.</dd>
+                        
+                        <dt><code>git pull</code></dt>
+                        <dd>Download and merge changes from the remote repository into your current branch.</dd>
+                    </dl>
+
+                    <h3>Example Workflow</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Create a new project
+mkdir my-project
+cd my-project
+git init
+
+# Make some changes, then:
+git status                        # See what changed
+git add .                         # Stage all changes
+git commit -m "Initial commit"    # Save the snapshot
+
+# Connect to GitHub and push
+git remote add origin https://github.com/username/repo.git
+git push -u origin main</code></pre>
+                    </div>
+                </section>
+
+                <section id="staging-area">
+                    <h2>The Staging Area</h2>
+                    <p>The staging area (also called the "index") is one of Git's most powerful features. It's a middle ground between your working directory and the repository, giving you precise control over what gets committed.</p>
+                    
+                    <h3>The Three States</h3>
+                    <ol>
+                        <li><strong>Working Directory:</strong> Where you edit files. Changes here are not yet tracked.</li>
+                        <li><strong>Staging Area:</strong> Where you prepare commits. Files here are ready to be saved.</li>
+                        <li><strong>Repository:</strong> Where commits are permanently stored. This is your project's history.</li>
+                    </ol>
+
+                    <h3>Why Stage Changes?</h3>
+                    <p>The staging area lets you carefully control what goes into each commit. You can:</p>
+                    <ul>
+                        <li>Stage only related changes together, creating logical commits</li>
+                        <li>Review changes before committing to catch mistakes</li>
+                        <li>Create atomic commits that focus on a single task or fix</li>
+                        <li>Exclude work-in-progress or experimental files</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <span class="code-label">Working with the Staging Area</span>
+                        <pre><code class="language-bash"># Add specific files
+git add index.html style.css
+
+# Add all files in a directory
+git add src/
+
+# Unstage a file (keep changes in working directory)
+git reset HEAD file.txt
+
+# View staged changes
+git diff --staged
+
+# View unstaged changes
+git diff</code></pre>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ Warning:</strong> Avoid using <code>git add -A</code> without reviewing changes first. Always check <code>git status</code> to know exactly what you're staging to prevent accidentally committing unwanted files.
+                    </div>
+                </section>
+
+                <section id="branching">
+                    <h2>Branching Basics</h2>
+                    <p>Branches are Git's killer feature. They allow you to diverge from the main line of development and work independently without affecting the stable codebase. Think of branches as parallel universes for your code!</p>
+                    
+                    <h3>Common Branch Commands</h3>
+                    <dl class="command-list">
+                        <dt><code>git branch</code></dt>
+                        <dd>List all local branches. The current branch is marked with an asterisk (*).</dd>
+                        
+                        <dt><code>git branch &lt;name&gt;</code></dt>
+                        <dd>Create a new branch (but don't switch to it). The branch will be based on your current position.</dd>
+                        
+                        <dt><code>git checkout &lt;branch&gt;</code></dt>
+                        <dd>Switch to an existing branch. Your working directory will update to reflect that branch's state.</dd>
+                        
+                        <dt><code>git checkout -b &lt;name&gt;</code></dt>
+                        <dd>Create a new branch AND switch to it immediately. This is a shortcut for branch + checkout.</dd>
+                        
+                        <dt><code>git merge &lt;branch&gt;</code></dt>
+                        <dd>Merge another branch into your current branch, combining their changes.</dd>
+                        
+                        <dt><code>git branch -d &lt;name&gt;</code></dt>
+                        <dd>Delete a branch safely (only if it's been merged). Use <code>-D</code> to force delete.</dd>
+                    </dl>
+
+                    <h3>Branch Naming Conventions</h3>
+                    <ul>
+                        <li><code>feature/login-page</code> - New features or enhancements</li>
+                        <li><code>bugfix/navbar-overflow</code> - Bug fixes</li>
+                        <li><code>hotfix/security-patch</code> - Urgent fixes for production</li>
+                        <li><code>docs/update-readme</code> - Documentation updates</li>
+                        <li><code>refactor/clean-api</code> - Code refactoring</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <span class="code-label">Example: Creating and Using Branches</span>
+                        <pre><code class="language-bash"># Create and switch to a new branch
+git checkout -b feature/dark-mode
+
+# Make your changes and commit
+git add .
+git commit -m "Add dark mode toggle"
+
+# Switch back to main
+git checkout main
+
+# Merge your feature
+git merge feature/dark-mode
+
+# Delete the feature branch (cleanup)
+git branch -d feature/dark-mode</code></pre>
+                    </div>
+                </section>
+
+                <section id="feature-workflow">
+                    <h2>Feature-Branch Workflow</h2>
+                    <p>This is the standard workflow for modern development teams. It keeps the <code>main</code> branch clean and stable while allowing multiple developers to work on different features simultaneously without stepping on each other's toes.</p>
+                    
+                    <h3>The Workflow Steps</h3>
+                    <ol class="workflow-steps">
+                        <li>
+                            <strong>Create a Branch:</strong> Start a new branch for your task or feature
+                            <div class="code-block">
+                                <pre><code class="language-bash">git checkout -b feature/new-feature</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Develop:</strong> Make your changes and commit them locally with clear messages
+                            <div class="code-block">
+                                <pre><code class="language-bash">git add .
+git commit -m "Implement new feature functionality"</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Push:</strong> Push your branch to GitHub to share with your team
+                            <div class="code-block">
+                                <pre><code class="language-bash">git push origin feature/new-feature</code></pre>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Pull Request:</strong> Open a PR on GitHub to merge your branch into <code>main</code>. Add a clear description of your changes.
+                        </li>
+                        <li>
+                            <strong>Review & Merge:</strong> Team members review your code, suggest improvements, then approve and merge the PR when ready.
+                        </li>
+                        <li>
+                            <strong>Clean Up:</strong> Delete the feature branch after merging to keep your repository tidy
+                            <div class="code-block">
+                                <pre><code class="language-bash">git checkout main
+git pull
+git branch -d feature/new-feature</code></pre>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <div class="note">
+                        <strong>💡 Best Practice:</strong> Keep your feature branches small and focused. Each branch should address one specific feature or fix. This makes code review easier and reduces merge conflicts.
+                    </div>
+
+                    <h3>Benefits of This Workflow</h3>
+                    <ul>
+                        <li><strong>Isolation:</strong> Work on features without affecting others or breaking the main codebase</li>
+                        <li><strong>Code Review:</strong> Pull Requests enable peer review, catching bugs and improving code quality</li>
+                        <li><strong>Continuous Integration:</strong> Automated tests run before merging, ensuring stability</li>
+                        <li><strong>Clean History:</strong> Main branch stays stable, deployable, and easy to understand</li>
+                        <li><strong>Parallel Development:</strong> Multiple team members can work simultaneously without conflicts</li>
+                    </ul>
+                </section>
+
+                <section id="pull-requests">
+                    <h2>Pull Requests</h2>
+                    <p>Pull Requests (PRs) are a GitHub feature that facilitates code review and collaboration. They're not part of Git itself, but they're essential to modern development workflows and team collaboration.</p>
+                    
+                    <h3>Creating a Pull Request</h3>
+                    <ol>
+                        <li>Push your feature branch to GitHub</li>
+                        <li>Navigate to your repository on GitHub</li>
+                        <li>Click the "Pull requests" tab, then "New pull request"</li>
+                        <li>Select your feature branch to merge into <code>main</code></li>
+                        <li>Add a descriptive title and detailed description explaining your changes</li>
+                        <li>Assign reviewers, add labels, and link related issues</li>
+                        <li>Click "Create pull request"</li>
+                    </ol>
+
+                    <h3>PR Best Practices</h3>
+                    <ul>
+                        <li><strong>Clear Title:</strong> Use descriptive titles like "Add user authentication" or "Fix navbar overflow on mobile"</li>
+                        <li><strong>Detailed Description:</strong> Explain what changed, why, and any important context or decisions</li>
+                        <li><strong>Small Changes:</strong> Keep PRs focused and reviewable (under 400 lines when possible)</li>
+                        <li><strong>Tests:</strong> Include tests for new features and ensure all tests pass</li>
+                        <li><strong>Screenshots:</strong> Add visual proof for UI changes (before/after comparisons)</li>
+                        <li><strong>Link Issues:</strong> Reference related issues (e.g., "Closes #123" or "Fixes #456")</li>
+                        <li><strong>Self-Review:</strong> Review your own PR first to catch obvious issues</li>
+                    </ul>
+
+                    <h3>Reviewing a Pull Request</h3>
+                    <p>As a reviewer, you should:</p>
+                    <ul>
+                        <li>Read the description and understand the context and purpose</li>
+                        <li>Review the code changes carefully, looking for bugs, style issues, and improvements</li>
+                        <li>Test the changes locally if possible to verify functionality</li>
+                        <li>Leave constructive comments and suggestions, not just criticism</li>
+                        <li>Approve if everything looks good, or request changes with clear explanations</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <span class="code-label">Reviewing Locally</span>
+                        <pre><code class="language-bash"># Fetch the PR branch (replace 123 with PR number)
+git fetch origin pull/123/head:pr-123
+git checkout pr-123
+
+# Test the changes
+npm test              # Run tests
+npm start             # Test functionality
+
+# Return to main when done
+git checkout main</code></pre>
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ Important:</strong> Never merge your own Pull Requests without review (unless it's a personal project). Code review catches bugs, improves code quality, and shares knowledge across the team.
+                    </div>
+                </section>
+
+                <section id="support">
+                    <h2>Support & Resources</h2>
+                    <p>Need help? Here are some valuable resources to continue your Git learning journey and get support when you need it.</p>
+                    
+                    <h3>Official Documentation</h3>
+                    <ul>
+                        <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Official Git Documentation</a> - Comprehensive reference for all Git commands</li>
+                        <li><a href="https://docs.github.com" target="_blank" rel="noopener noreferrer">GitHub Docs</a> - Learn about GitHub-specific features and workflows</li>
+                        <li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Pro Git Book (Free)</a> - The definitive guide to Git, completely free online</li>
+                    </ul>
+
+                    <h3>Interactive Learning</h3>
+                    <ul>
+                        <li><a href="https://learngitbranching.js.org" target="_blank" rel="noopener noreferrer">Learn Git Branching</a> - Interactive visualization of Git concepts</li>
+                        <li><a href="https://github.com/skills" target="_blank" rel="noopener noreferrer">GitHub Skills</a> - Guided courses and interactive tutorials</li>
+                        <li><a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer">Atlassian Git Tutorials</a> - Comprehensive tutorials from Bitbucket creators</li>
+                    </ul>
+
+                    <h3>Cheat Sheets</h3>
+                    <ul>
+                        <li><a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener noreferrer">GitHub Git Cheat Sheet (PDF)</a> - Quick reference for common commands</li>
+                        <li><a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet" target="_blank" rel="noopener noreferrer">Atlassian Git Cheat Sheet</a> - Visual command reference</li>
+                    </ul>
+
+                    <h3>Community Support</h3>
+                    <ul>
+                        <li><a href="https://stackoverflow.com/questions/tagged/git" target="_blank" rel="noopener noreferrer">Stack Overflow - Git Tag</a> - Q&A for specific Git problems</li>
+                        <li><a href="https://github.community" target="_blank" rel="noopener noreferrer">GitHub Community Forum</a> - Official GitHub community discussions</li>
+                        <li><a href="https://www.reddit.com/r/git/" target="_blank" rel="noopener noreferrer">Reddit r/git</a> - Git community and discussions</li>
+                    </ul>
+
+                    <div class="note">
+                        <strong>💡 Practice Makes Perfect:</strong> The best way to learn Git is by using it. Start with small personal projects and gradually work up to collaborative development. Don't be afraid to make mistakes—that's how you learn!
+                    </div>
+                </section>
+            </article>
+
+            <!-- Content Pagination -->
+            <nav class="content-pagination" aria-label="Content navigation">
+                <div class="prev">
+                </div>
+                <div class="next">
+                    <a href="#installation" rel="next">Next: Installation &rarr;</a>
+                </div>
+            </nav>
+        </main>
     </div>
 
     <footer class="site-footer" role="contentinfo">
@@ -87,5 +468,10 @@
             <p>Built with Semantic HTML5, Responsive Design & Accessibility in Mind.</p>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu and Interactivity -->
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/scroll-spy.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
 </body>
 </html>
