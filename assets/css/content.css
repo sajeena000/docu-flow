@@ -1,11 +1,9 @@
-/* ===== Main Content Container ===== */
 .content-area {
     padding: 3rem 2rem;
     max-width: 900px;
     background-color: var(--bg-main, #ffffff);
 }
 
-/* ===== Content Header ===== */
 .content-header {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
@@ -28,17 +26,15 @@
     font-weight: 400;
 }
 
-/* ===== Article Sections ===== */
 article {
     color: var(--text-primary, #24292e);
 }
 
 article section {
     margin-bottom: 3rem;
-    scroll-margin-top: calc(64px + 1rem); /* Header height + offset */
+    scroll-margin-top: calc(64px + 1rem); 
 }
 
-/* ===== Headings ===== */
 article h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -69,7 +65,6 @@ article h4 {
     line-height: 1.4;
 }
 
-/* ===== Paragraphs ===== */
 article p {
     margin-bottom: 1rem;
     color: var(--text-primary, #24292e);
@@ -80,7 +75,6 @@ article p:last-child {
     margin-bottom: 0;
 }
 
-/* ===== Strong and Emphasis ===== */
 article strong {
     font-weight: 600;
     color: var(--text-primary, #24292e);
@@ -91,7 +85,6 @@ article em {
     color: var(--text-secondary, #586069);
 }
 
-/* ===== Links ===== */
 article a {
     color: var(--primary-color, #0366d6);
     text-decoration: none;
@@ -114,14 +107,12 @@ article a:visited {
     color: #6f42c1;
 }
 
-/* External link indicator */
 article a[target="_blank"]::after {
     content: " ↗";
     font-size: 0.875em;
     vertical-align: super;
 }
 
-/* ===== Lists ===== */
 article ul,
 article ol {
     margin-left: 2rem;
@@ -155,14 +146,12 @@ article ol ol li {
     list-style-type: lower-alpha;
 }
 
-/* Nested lists */
 article li > ul,
 article li > ol {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-/* ===== Definition Lists (Command Lists) ===== */
 .command-list {
     margin-bottom: 1.5rem;
     border-left: 3px solid var(--primary-color, #0366d6);
@@ -192,7 +181,6 @@ article li > ol {
     font-size: 0.9em;
 }
 
-/* ===== Workflow Steps (Ordered Process) ===== */
 .workflow-steps {
     counter-reset: step-counter;
     list-style: none;
@@ -233,12 +221,10 @@ article li > ol {
     color: var(--text-primary, #24292e);
 }
 
-/* Code blocks within workflow steps */
 .workflow-steps .code-block {
     margin-top: 0.75rem;
 }
 
-/* ===== Code and Pre ===== */
 code {
     font-family: var(--font-family-mono, 'SFMono-Regular', Consolas, monospace);
     font-size: 0.875em;
@@ -250,19 +236,16 @@ code {
     white-space: nowrap;
 }
 
-/* Code within headings */
 h2 code,
 h3 code,
 h4 code {
     font-size: 0.85em;
 }
 
-/* Code within links */
 a code {
     color: inherit;
 }
 
-/* Pre-formatted text blocks */
 pre {
     background-color: var(--bg-code-dark, #24292e);
     color: #f6f8fa;
@@ -284,7 +267,6 @@ pre code {
     display: block;
 }
 
-/* Syntax highlighting colors for code blocks */
 pre code .comment {
     color: #6a737d;
 }
@@ -305,7 +287,6 @@ pre code .number {
     color: #79b8ff;
 }
 
-/* ===== Code Block Container ===== */
 .code-block {
     position: relative;
     margin-bottom: 1.5rem;
@@ -330,7 +311,6 @@ pre code .number {
     margin-top: 0;
 }
 
-/* Code block with copy functionality */
 .code-block-wrapper {
     position: relative;
 }
@@ -353,7 +333,6 @@ pre code .number {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* ===== Callout Boxes ===== */
 .note,
 .warning,
 .tip,
@@ -374,7 +353,6 @@ pre code .number {
     font-weight: 600;
 }
 
-/* Note (Info) */
 .note {
     background-color: var(--bg-note, #e7f4ff);
     border-color: var(--primary-color, #0366d6);
@@ -384,7 +362,6 @@ pre code .number {
     color: var(--primary-color, #0366d6);
 }
 
-/* Warning */
 .warning {
     background-color: var(--bg-warning, #fff5b1);
     border-color: #d29922;
@@ -394,7 +371,6 @@ pre code .number {
     color: #c27803;
 }
 
-/* Tip */
 .tip {
     background-color: #dcffe4;
     border-color: var(--accent-color, #28a745);
@@ -404,7 +380,6 @@ pre code .number {
     color: #22863a;
 }
 
-/* Important */
 .important {
     background-color: #ffdce0;
     border-color: #d73a49;
@@ -414,7 +389,6 @@ pre code .number {
     color: #cb2431;
 }
 
-/* Icon indicators for callouts */
 .note strong::before,
 .warning strong::before,
 .tip strong::before,
@@ -423,7 +397,6 @@ pre code .number {
     font-weight: 700;
 }
 
-/* ===== Blockquotes ===== */
 article blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
@@ -445,7 +418,6 @@ article blockquote cite {
     font-style: normal;
 }
 
-/* ===== Tables ===== */
 article table {
     width: 100%;
     border-collapse: collapse;
@@ -474,14 +446,12 @@ article table tr:hover {
     background-color: rgba(3, 102, 214, 0.05);
 }
 
-/* ===== Horizontal Rule ===== */
 article hr {
     border: none;
     border-top: 2px solid var(--border-color, #e1e4e8);
     margin: 2rem 0;
 }
 
-/* ===== Images ===== */
 article img {
     max-width: 100%;
     height: auto;
@@ -502,7 +472,6 @@ article figcaption {
     font-style: italic;
 }
 
-/* ===== Content Pagination ===== */
 .content-pagination {
     display: flex;
     justify-content: space-between;
@@ -547,9 +516,6 @@ article figcaption {
     margin-left: auto;
 }
 
-/* ===== Responsive Adjustments ===== */
-
-/* Tablet */
 @media (max-width: 768px) {
     .content-area {
         padding: 2rem 1.5rem;
@@ -591,7 +557,6 @@ article figcaption {
     }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
     .content-area {
         padding: 1.5rem 1rem;
@@ -688,7 +653,6 @@ article figcaption {
     }
 }
 
-/* Print Styles */
 @media print {
     .content-area {
         max-width: 100%;

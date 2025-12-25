@@ -1,16 +1,9 @@
-/* =====================================================
-   GitFlow Documentation - Main Stylesheet
-   ===================================================== */
-
-/* ===== CSS Variables (Custom Properties) ===== */
 :root {
-    /* Colors */
     --primary-color: #0366d6;
     --primary-dark: #0256c7;
     --secondary-color: #586069;
     --accent-color: #28a745;
     
-    /* Backgrounds */
     --bg-main: #ffffff;
     --bg-sidebar: #f6f8fa;
     --bg-code: #f6f8fa;
@@ -19,18 +12,15 @@
     --bg-warning: #fff5b1;
     --bg-footer: #24292e;
     
-    /* Text Colors */
     --text-primary: #24292e;
     --text-secondary: #586069;
     --text-light: #6a737d;
     --text-white: #ffffff;
     --text-code: #e83e8c;
     
-    /* Borders */
     --border-color: #e1e4e8;
     --border-color-dark: #d1d5da;
     
-    /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -38,28 +28,23 @@
     --spacing-xl: 2rem;
     --spacing-xxl: 3rem;
     
-    /* Typography */
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
     --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     --font-size-base: 16px;
     --line-height-base: 1.6;
     
-    /* Layout */
     --sidebar-width: 280px;
     --header-height: 64px;
     --content-max-width: 900px;
     
-    /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
     
-    /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -79,7 +64,6 @@ body {
     background-color: var(--bg-main);
 }
 
-/* ===== Skip Link (Accessibility) ===== */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -98,14 +82,12 @@ body {
     outline-offset: 2px;
 }
 
-/* ===== Container ===== */
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-/* ===== Header ===== */
 .site-header {
     background-color: var(--bg-code-dark);
     color: var(--text-white);
@@ -139,7 +121,6 @@ body {
     color: var(--text-white);
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     background: none;
@@ -205,7 +186,6 @@ body {
     transform: rotate(-45deg);
 }
 
-/* Top Navigation */
 .top-nav ul {
     display: flex;
     list-style: none;
@@ -229,7 +209,6 @@ body {
     border-radius: 2px;
 }
 
-/* ===== Layout Grid ===== */
 .layout-grid {
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
@@ -237,7 +216,6 @@ body {
     min-height: calc(100vh - var(--header-height));
 }
 
-/* ===== Sidebar ===== */
 .sidebar {
     background-color: var(--bg-sidebar);
     border-right: 1px solid var(--border-color);
@@ -318,7 +296,6 @@ body {
     font-weight: 600;
 }
 
-/* ===== Main Content Area ===== */
 .content-area {
     padding: var(--spacing-xxl) var(--spacing-xl);
     max-width: var(--content-max-width);
@@ -344,7 +321,6 @@ body {
     line-height: 1.5;
 }
 
-/* ===== Typography ===== */
 article section {
     margin-bottom: var(--spacing-xxl);
     scroll-margin-top: calc(var(--header-height) + var(--spacing-md));
@@ -396,7 +372,6 @@ article a:focus {
     border-radius: 2px;
 }
 
-/* Lists */
 article ul,
 article ol {
     margin-left: var(--spacing-xl);
@@ -416,7 +391,6 @@ article ol li {
     list-style-type: decimal;
 }
 
-/* Definition List (Command List) */
 .command-list {
     margin-bottom: var(--spacing-lg);
 }
@@ -434,7 +408,6 @@ article ol li {
     margin-bottom: var(--spacing-md);
 }
 
-/* Workflow Steps */
 .workflow-steps {
     counter-reset: step-counter;
     list-style: none;
@@ -465,7 +438,6 @@ article ol li {
     font-size: 0.875rem;
 }
 
-/* ===== Code Styles ===== */
 code {
     font-family: var(--font-family-mono);
     font-size: 0.875em;
@@ -517,7 +489,6 @@ pre code {
     border-radius: 0 6px 6px 6px;
 }
 
-/* ===== Callout Boxes ===== */
 .note,
 .warning {
     padding: var(--spacing-md) var(--spacing-lg);
@@ -544,7 +515,6 @@ pre code {
     color: #c27803;
 }
 
-/* ===== Content Pagination ===== */
 .content-pagination {
     display: flex;
     justify-content: space-between;
@@ -585,7 +555,6 @@ pre code {
     margin-left: auto;
 }
 
-/* ===== Footer ===== */
 .site-footer {
     background-color: var(--bg-footer);
     color: var(--text-light);
@@ -598,9 +567,7 @@ pre code {
     margin-bottom: var(--spacing-sm);
 }
 
-/* ===== Responsive Design ===== */
 
-/* Tablet (768px and below) */
 @media (max-width: 768px) {
     :root {
         --sidebar-width: 260px;
@@ -655,7 +622,6 @@ pre code {
     }
 }
 
-/* Mobile (480px and below) */
 @media (max-width: 480px) {
     :root {
         --font-size-base: 15px;
@@ -745,7 +711,6 @@ pre code {
     }
 }
 
-/* Large Desktop (1200px and above) */
 @media (min-width: 1200px) {
     :root {
         --sidebar-width: 300px;
@@ -756,7 +721,6 @@ pre code {
     }
 }
 
-/* Print Styles */
 @media print {
     .site-header,
     .sidebar,

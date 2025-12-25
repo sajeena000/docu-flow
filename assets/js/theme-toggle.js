@@ -78,7 +78,6 @@
         // Insert at the beginning of the nav list
         topNav.insertBefore(li, topNav.firstChild);
 
-        // Add event listener
         toggleBtn.addEventListener('click', toggleTheme);
         
         console.log('Theme toggle button created');
@@ -88,7 +87,6 @@
     const watchSystemTheme = () => {
         if (window.matchMedia) {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                // Only apply system preference if user hasn't set a preference
                 if (!localStorage.getItem('theme')) {
                     applyTheme(e.matches ? 'dark' : 'light');
                 }
