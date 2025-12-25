@@ -1,0 +1,714 @@
+/* ===== Main Content Container ===== */
+.content-area {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    background-color: var(--bg-main, #ffffff);
+}
+
+/* ===== Content Header ===== */
+.content-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color, #e1e4e8);
+}
+
+.content-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary, #24292e);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary, #586069);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* ===== Article Sections ===== */
+article {
+    color: var(--text-primary, #24292e);
+}
+
+article section {
+    margin-bottom: 3rem;
+    scroll-margin-top: calc(64px + 1rem); /* Header height + offset */
+}
+
+/* ===== Headings ===== */
+article h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary, #24292e);
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color, #e1e4e8);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary, #24292e);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+article h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #24292e);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+/* ===== Paragraphs ===== */
+article p {
+    margin-bottom: 1rem;
+    color: var(--text-primary, #24292e);
+    line-height: 1.7;
+}
+
+article p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== Strong and Emphasis ===== */
+article strong {
+    font-weight: 600;
+    color: var(--text-primary, #24292e);
+}
+
+article em {
+    font-style: italic;
+    color: var(--text-secondary, #586069);
+}
+
+/* ===== Links ===== */
+article a {
+    color: var(--primary-color, #0366d6);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+article a:hover {
+    border-bottom-color: var(--primary-color, #0366d6);
+    color: var(--primary-dark, #0256c7);
+}
+
+article a:focus {
+    outline: 2px solid var(--primary-color, #0366d6);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+article a:visited {
+    color: #6f42c1;
+}
+
+/* External link indicator */
+article a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.875em;
+    vertical-align: super;
+}
+
+/* ===== Lists ===== */
+article ul,
+article ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+article li {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #24292e);
+    line-height: 1.7;
+}
+
+article ul li {
+    list-style-type: disc;
+}
+
+article ul ul li {
+    list-style-type: circle;
+}
+
+article ul ul ul li {
+    list-style-type: square;
+}
+
+article ol li {
+    list-style-type: decimal;
+}
+
+article ol ol li {
+    list-style-type: lower-alpha;
+}
+
+/* Nested lists */
+article li > ul,
+article li > ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Definition Lists (Command Lists) ===== */
+.command-list {
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary-color, #0366d6);
+    padding-left: 1.5rem;
+}
+
+.command-list dt {
+    font-weight: 600;
+    color: var(--text-primary, #24292e);
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.command-list dt:first-child {
+    margin-top: 0;
+}
+
+.command-list dd {
+    margin-left: 2rem;
+    color: var(--text-secondary, #586069);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.command-list code {
+    font-size: 0.9em;
+}
+
+/* ===== Workflow Steps (Ordered Process) ===== */
+.workflow-steps {
+    counter-reset: step-counter;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.workflow-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+    min-height: 32px;
+}
+
+.workflow-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary-color, #0366d6), var(--primary-dark, #0256c7));
+    color: var(--text-white, #ffffff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(3, 102, 214, 0.3);
+}
+
+.workflow-steps li strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #24292e);
+}
+
+/* Code blocks within workflow steps */
+.workflow-steps .code-block {
+    margin-top: 0.75rem;
+}
+
+/* ===== Code and Pre ===== */
+code {
+    font-family: var(--font-family-mono, 'SFMono-Regular', Consolas, monospace);
+    font-size: 0.875em;
+    background-color: var(--bg-code, #f6f8fa);
+    color: var(--text-code, #e83e8c);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    border: 1px solid var(--border-color, #e1e4e8);
+    white-space: nowrap;
+}
+
+/* Code within headings */
+h2 code,
+h3 code,
+h4 code {
+    font-size: 0.85em;
+}
+
+/* Code within links */
+a code {
+    color: inherit;
+}
+
+/* Pre-formatted text blocks */
+pre {
+    background-color: var(--bg-code-dark, #24292e);
+    color: #f6f8fa;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color-dark, #d1d5da);
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: none;
+    font-size: 0.875rem;
+    white-space: pre;
+    display: block;
+}
+
+/* Syntax highlighting colors for code blocks */
+pre code .comment {
+    color: #6a737d;
+}
+
+pre code .keyword {
+    color: #f97583;
+}
+
+pre code .string {
+    color: #9ecbff;
+}
+
+pre code .function {
+    color: #b392f0;
+}
+
+pre code .number {
+    color: #79b8ff;
+}
+
+/* ===== Code Block Container ===== */
+.code-block {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.code-label {
+    display: inline-block;
+    background-color: var(--secondary-color, #586069);
+    color: var(--text-white, #ffffff);
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+    font-family: var(--font-family-mono, monospace);
+}
+
+.code-block .code-label + pre {
+    border-radius: 0 6px 6px 6px;
+    margin-top: 0;
+}
+
+/* Code block with copy functionality */
+.code-block-wrapper {
+    position: relative;
+}
+
+.code-copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f6f8fa;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.code-copy-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Callout Boxes ===== */
+.note,
+.warning,
+.tip,
+.important {
+    padding: 1rem 1.5rem;
+    border-left: 4px solid;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.note strong,
+.warning strong,
+.tip strong,
+.important strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Note (Info) */
+.note {
+    background-color: var(--bg-note, #e7f4ff);
+    border-color: var(--primary-color, #0366d6);
+}
+
+.note strong {
+    color: var(--primary-color, #0366d6);
+}
+
+/* Warning */
+.warning {
+    background-color: var(--bg-warning, #fff5b1);
+    border-color: #d29922;
+}
+
+.warning strong {
+    color: #c27803;
+}
+
+/* Tip */
+.tip {
+    background-color: #dcffe4;
+    border-color: var(--accent-color, #28a745);
+}
+
+.tip strong {
+    color: #22863a;
+}
+
+/* Important */
+.important {
+    background-color: #ffdce0;
+    border-color: #d73a49;
+}
+
+.important strong {
+    color: #cb2431;
+}
+
+/* Icon indicators for callouts */
+.note strong::before,
+.warning strong::before,
+.tip strong::before,
+.important strong::before {
+    margin-right: 0.5rem;
+    font-weight: 700;
+}
+
+/* ===== Blockquotes ===== */
+article blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--border-color-dark, #d1d5da);
+    background-color: var(--bg-sidebar, #f6f8fa);
+    color: var(--text-secondary, #586069);
+    font-style: italic;
+}
+
+article blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+article blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-light, #6a737d);
+    font-style: normal;
+}
+
+/* ===== Tables ===== */
+article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+
+article table th,
+article table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color, #e1e4e8);
+}
+
+article table th {
+    background-color: var(--bg-sidebar, #f6f8fa);
+    font-weight: 600;
+    color: var(--text-primary, #24292e);
+}
+
+article table tr:nth-child(even) {
+    background-color: var(--bg-sidebar, #f6f8fa);
+}
+
+article table tr:hover {
+    background-color: rgba(3, 102, 214, 0.05);
+}
+
+/* ===== Horizontal Rule ===== */
+article hr {
+    border: none;
+    border-top: 2px solid var(--border-color, #e1e4e8);
+    margin: 2rem 0;
+}
+
+/* ===== Images ===== */
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+article figure {
+    margin: 1.5rem 0;
+}
+
+article figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary, #586069);
+    text-align: center;
+    font-style: italic;
+}
+
+/* ===== Content Pagination ===== */
+.content-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color, #e1e4e8);
+}
+
+.content-pagination a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-sidebar, #f6f8fa);
+    color: var(--primary-color, #0366d6);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #e1e4e8);
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.content-pagination a:hover {
+    background-color: var(--primary-color, #0366d6);
+    color: var(--text-white, #ffffff);
+    border-color: var(--primary-color, #0366d6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+}
+
+.content-pagination a:focus {
+    outline: 2px solid var(--primary-color, #0366d6);
+    outline-offset: 2px;
+}
+
+.content-pagination .prev {
+    margin-right: auto;
+}
+
+.content-pagination .next {
+    margin-left: auto;
+}
+
+/* ===== Responsive Adjustments ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .content-area {
+        padding: 2rem 1.5rem;
+    }
+
+    .content-header h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.125rem;
+    }
+
+    article h2 {
+        font-size: 1.75rem;
+    }
+
+    article h3 {
+        font-size: 1.25rem;
+    }
+
+    article ul,
+    article ol {
+        margin-left: 1.5rem;
+    }
+
+    .command-list dd {
+        margin-left: 1.5rem;
+    }
+
+    .workflow-steps li {
+        padding-left: 2.5rem;
+    }
+
+    .workflow-steps li::before {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .content-area {
+        padding: 1.5rem 1rem;
+    }
+
+    .content-header {
+        margin-bottom: 2rem;
+    }
+
+    .content-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    article section {
+        margin-bottom: 2rem;
+    }
+
+    article h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    article h3 {
+        font-size: 1.125rem;
+    }
+
+    article ul,
+    article ol {
+        margin-left: 1.25rem;
+    }
+
+    .command-list {
+        padding-left: 1rem;
+    }
+
+    .command-list dd {
+        margin-left: 1rem;
+    }
+
+    .workflow-steps li {
+        padding-left: 2.25rem;
+    }
+
+    .workflow-steps li::before {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    pre {
+        padding: 0.75rem;
+        font-size: 0.8125rem;
+    }
+
+    code {
+        font-size: 0.8125em;
+    }
+
+    .note,
+    .warning,
+    .tip,
+    .important {
+        padding: 0.75rem 1rem;
+    }
+
+    .content-pagination {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .content-pagination .prev,
+    .content-pagination .next {
+        margin: 0;
+        width: 100%;
+    }
+
+    .content-pagination a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    article table {
+        font-size: 0.875rem;
+    }
+
+    article table th,
+    article table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .content-area {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .content-pagination {
+        display: none;
+    }
+
+    article section {
+        page-break-inside: avoid;
+    }
+
+    article h2,
+    article h3 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,89 @@
+/* =====================================================
+   GitFlow Documentation - Responsive Styles (Tweaks)
+   Focuses on Typography and Spacing adjustments
+   Layout structure handled in navigation.css
+   ===================================================== */
+
+/* ===== Small Phones (Up to 479px) ===== */
+@media (max-width: 479px) {
+    :root {
+        --font-size-base: 14px; /* Slightly smaller base for tiny screens */
+    }
+    
+    .content-area { 
+        padding: 1rem; 
+    }
+    
+    .content-header h1 { 
+        font-size: 1.75rem; 
+    }
+    
+    article h2 { 
+        font-size: 1.5rem; 
+    }
+    
+    /* Ensure code doesn't break the layout */
+    pre { 
+        padding: 0.75rem; 
+        font-size: 0.8rem; 
+    }
+
+    .content-pagination {
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+}
+
+/* ===== Tablets (768px and up) ===== */
+@media (min-width: 768px) {
+    .content-area {
+        padding: 2rem 1.5rem;
+    }
+    
+    .content-header h1 { 
+        font-size: 2.125rem; 
+    }
+}
+
+/* ===== Large Desktops (1200px and up) ===== */
+@media (min-width: 1200px) {
+    .content-area {
+        padding: 3rem 4rem;
+        max-width: 1000px; /* Better readability for long text */
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .site-header, 
+    .sidebar, 
+    .menu-toggle, 
+    .content-pagination, 
+    .site-footer {
+        display: none !important;
+    }
+    
+    .layout-grid { 
+        display: block; 
+    }
+    
+    .content-area { 
+        max-width: 100%; 
+        padding: 0; 
+    }
+    
+    a[href^="http"]:after { 
+        content: " (" attr(href) ")"; 
+    }
+}
+
+/* ===== Accessibility: Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, 
+    *::before, 
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
