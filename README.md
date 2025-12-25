@@ -2,6 +2,9 @@
 
 A professional, content-focused documentation website designed to teach beginners the Git Feature-Branch workflow. Built with a focus on performance, accessibility, and responsive design.
 
+## Live Demo
+[View the Live Project here](https://sajeena000.github.io/docu-flow/)
+
 ## Key Features
 - **Documentation-Style Layout:** Includes a sticky sidebar navigation and scroll-spy for easy content discovery.
 - **Mobile-First Responsive Design:** Optimized for all screen sizes using a fluid CSS Grid and Flexbox architecture.
@@ -28,6 +31,7 @@ This project was developed using a professional **Feature-Branch Workflow**:
 ├── index.html      # Main entry point (Semantic HTML5)
 └── README.md
 ```
+
 
 
 
