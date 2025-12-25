@@ -1,13 +1,6 @@
-/* =====================================================
-   GitFlow Documentation - Responsive Styles (Tweaks)
-   Focuses on Typography and Spacing adjustments
-   Layout structure handled in navigation.css
-   ===================================================== */
-
-/* ===== Small Phones (Up to 479px) ===== */
 @media (max-width: 479px) {
     :root {
-        --font-size-base: 14px; /* Slightly smaller base for tiny screens */
+        --font-size-base: 14px; 
     }
     
     .content-area { 
@@ -22,7 +15,6 @@
         font-size: 1.5rem; 
     }
     
-    /* Ensure code doesn't break the layout */
     pre { 
         padding: 0.75rem; 
         font-size: 0.8rem; 
@@ -34,7 +26,6 @@
     }
 }
 
-/* ===== Tablets (768px and up) ===== */
 @media (min-width: 768px) {
     .content-area {
         padding: 2rem 1.5rem;
@@ -45,15 +36,13 @@
     }
 }
 
-/* ===== Large Desktops (1200px and up) ===== */
 @media (min-width: 1200px) {
     .content-area {
         padding: 3rem 4rem;
-        max-width: 1000px; /* Better readability for long text */
+        max-width: 1000px; 
     }
 }
 
-/* ===== Print Styles ===== */
 @media print {
     .site-header, 
     .sidebar, 
@@ -77,7 +66,6 @@
     }
 }
 
-/* ===== Accessibility: Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
     *, 
     *::before, 
