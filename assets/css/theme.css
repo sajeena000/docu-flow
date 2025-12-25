@@ -1,0 +1,317 @@
+/* ===================================
+   THEME TOGGLE BUTTON STYLES
+   =================================== */
+
+.top-nav ul li {
+    list-style: none;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.theme-toggle:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.theme-toggle:focus {
+    outline: 2px solid #0366d6;
+    outline-offset: 2px;
+}
+
+.theme-icon {
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.theme-text {
+    font-size: 14px;
+}
+
+/* ===================================
+   DARK THEME - CSS VARIABLES
+   =================================== */
+
+[data-theme="dark"] {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --border-color: #30363d;
+    --border-hover: #484f58;
+    --link-color: #58a6ff;
+    --link-hover: #79c0ff;
+    --code-bg: #161b22;
+    --note-bg: #1c2128;
+    --warning-bg: #1c2128;
+    --accent-primary: #58a6ff;
+}
+
+/* ===================================
+   DARK THEME - GLOBAL STYLES
+   =================================== */
+
+[data-theme="dark"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Header */
+[data-theme="dark"] .site-header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .brand-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-hover);
+}
+
+/* Top Navigation */
+[data-theme="dark"] .top-nav a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .top-nav a:hover {
+    color: var(--link-color);
+}
+
+/* Mobile Menu Toggle */
+[data-theme="dark"] .menu-toggle {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .menu-toggle:hover {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .hamburger,
+[data-theme="dark"] .hamburger::before,
+[data-theme="dark"] .hamburger::after {
+    background: var(--text-primary);
+}
+
+/* ===================================
+   DARK THEME - SIDEBAR
+   =================================== */
+
+[data-theme="dark"] .sidebar {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-group h3 {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .sidebar-nav a {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .sidebar-nav a:hover {
+    color: var(--link-color);
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .sidebar-nav a.active {
+    color: var(--link-color);
+    background: var(--bg-tertiary);
+    border-left-color: var(--link-color);
+}
+
+/* ===================================
+   DARK THEME - MAIN CONTENT
+   =================================== */
+
+[data-theme="dark"] .content-area {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .subtitle {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] dd {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] a {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--link-hover);
+}
+
+[data-theme="dark"] strong {
+    color: var(--text-primary);
+}
+
+/* ===================================
+   DARK THEME - CODE BLOCKS
+   =================================== */
+
+[data-theme="dark"] .code-block {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .code-label {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] code {
+    background: var(--bg-tertiary);
+    color: #f0883e;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] pre code {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .language-bash {
+    color: #79c0ff;
+}
+
+/* ===================================
+   DARK THEME - NOTES & WARNINGS
+   =================================== */
+
+[data-theme="dark"] .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--link-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .warning {
+    background: var(--warning-bg);
+    border-left: 3px solid #f85149;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .note strong,
+[data-theme="dark"] .warning strong {
+    color: var(--text-primary);
+}
+
+/* ===================================
+   DARK THEME - COMMAND LIST
+   =================================== */
+
+[data-theme="dark"] .command-list dt {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .command-list dt code {
+    color: #79c0ff;
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .command-list dd {
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   DARK THEME - WORKFLOW STEPS
+   =================================== */
+
+[data-theme="dark"] .workflow-steps > li {
+    border-left: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .workflow-steps > li strong {
+    color: var(--link-color);
+}
+
+/* ===================================
+   DARK THEME - PAGINATION
+   =================================== */
+
+[data-theme="dark"] .content-pagination a {
+    color: var(--link-color);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .content-pagination a:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-hover);
+}
+
+/* ===================================
+   DARK THEME - FOOTER
+   =================================== */
+
+[data-theme="dark"] .site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   DARK THEME - SKIP LINK
+   =================================== */
+
+[data-theme="dark"] .skip-link:focus {
+    background: var(--bg-tertiary);
+    color: var(--link-color);
+}
+
+/* ===================================
+   SMOOTH TRANSITIONS
+   =================================== */
+
+body,
+.site-header,
+.sidebar,
+.content-area,
+.code-block,
+.note,
+.warning,
+.theme-toggle {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
